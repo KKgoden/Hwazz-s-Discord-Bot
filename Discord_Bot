@@ -36,14 +36,14 @@ async def 방온(ctx):
     embed=discord.Embed(title="화쯔님이 방송을 켜셨어요!", url="https://www.twitch.tv/yurimname", description="어서 보러와주세요!", color=0x31f1ae)
     embed.set_author(name="_화쯔", url="https://www.twitch.tv/yurimname", icon_url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
     embed.set_thumbnail(url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
-    await self.bot.say(embed=embed)
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def 뱅온(ctx):
     embed=discord.Embed(title="화쯔님이 방송을 켜셨어요!", url="https://www.twitch.tv/yurimname", description="어서 보러와주세요!", color=0x31f1ae)
     embed.set_author(name="_화쯔", url="https://www.twitch.tv/yurimname", icon_url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
     embed.set_thumbnail(url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
-    await self.bot.say(embed=embed)
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def 명령어(ctx):
