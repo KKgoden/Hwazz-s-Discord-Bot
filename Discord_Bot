@@ -26,27 +26,24 @@ async def on_ready():
     print('본 프로그램을 종료할시 디스코드 봇을 이용하실 수 없습니다.')
     print('------')
 
-    twitch_id = 'yurimname'
-    channel = bot.get_channel(645629874404327445)
-    a = 0
-    while True:
-        headers = {'Client-ID': '56fo5fnunx157rm4pug2tdaefh7aw5'}
-        response = requests.get("https://api.twitch.tv/helix/streams?user_login=" + twitch_id, headers=headers)
-        try:
-            if loads(response.text)['data'][0]['type'] == 'live' and a == 0:
-                embed=discord.Embed(title="화쯔님이 방송을 켜셨어요!", url="https://www.twitch.tv/yurimname", description="어서 보러와주세요!", color=0x31f1ae)
-                embed.set_author(name="_화쯔", url="https://www.twitch.tv/yurimname", icon_url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
-                embed.set_thumbnail(url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
-                await self.bot.say(embed=embed)
-                a = 1
-        except:
-            a = 0
-            await asyncio.sleep(2)
-
 @bot.event 
 async def on_member_join(member):
     await member.send('화쯔님과 트수들의 소통디코방에 오신걸 환영합니다!\n'
                       '처음오신분은 <#647135223829757962> 를 확인해주세요!')
+
+@bot.command()
+async def 방온(ctx):
+    embed=discord.Embed(title="화쯔님이 방송을 켜셨어요!", url="https://www.twitch.tv/yurimname", description="어서 보러와주세요!", color=0x31f1ae)
+    embed.set_author(name="_화쯔", url="https://www.twitch.tv/yurimname", icon_url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
+    embed.set_thumbnail(url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
+    await self.bot.say(embed=embed)
+
+@bot.command()
+async def 뱅온(ctx):
+    embed=discord.Embed(title="화쯔님이 방송을 켜셨어요!", url="https://www.twitch.tv/yurimname", description="어서 보러와주세요!", color=0x31f1ae)
+    embed.set_author(name="_화쯔", url="https://www.twitch.tv/yurimname", icon_url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
+    embed.set_thumbnail(url="https://static-cdn.jtvnw.net/jtv_user_pictures/3bb6bf7b-3238-4600-8592-d85fbc9f9a7a-profile_image-70x70.png")
+    await self.bot.say(embed=embed)
 
 @bot.command()
 async def 명령어(ctx):
